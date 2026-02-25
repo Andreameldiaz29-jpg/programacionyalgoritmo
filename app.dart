@@ -1,20 +1,23 @@
 import 'dart:io';
 
 void main() {
-  stdout.write('Nombre: ');
-  String nombre = stdin.readLineSync()!;
+  // Solicitar datos
+  stdout.write("Ingrese su nombre: ");
+  String? nombre = stdin.readLineSync();
 
-  stdout.write('Apellido: ');
-  String apellido = stdin.readLineSync()!;
+  stdout.write("Ingrese su apellido: ");
+  String? apellido = stdin.readLineSync();
 
-  stdout.write('Ingrese edad hermano mayor: ');
-  int hm = int.parse(stdin.readLineSync()!);
+  stdout.write("Ingrese la edad del hermano mayor: ");
+  int edadMayor = int.parse(stdin.readLineSync()!);
 
-  stdout.write('Ingrese edad hermano menor: ');
-  int hn = int.parse(stdin.readLineSync()!);
+  stdout.write("Ingrese la edad del hermano menor: ");
+  int edadMenor = int.parse(stdin.readLineSync()!);
 
-  int diferencia = hm - hn;
+  // Calcular diferencia
+  int diferencia = edadMayor - edadMenor;
 
-  print(
-      'Nombre completo es: $nombre $apellido, edad del hermano mayor es: $hm y la del hermano menor es: $hn, y su diferencia de edad es de $diferencia años');
+  // Mostrar resultados (interpolación)
+  print("\nNombre completo: $nombre $apellido");
+  print("Diferencia de edad entre hermanos: $diferencia años");
 }
